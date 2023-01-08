@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+
+    <header class="header">
+      <div class="header__content">
+        <a class="header__logo" href="index.html">
+          <strong>CARO</strong>
+        </a>
+        <ul class="posizione_relativa">
+        <div>
+          <li class="header__menu" id="figlio"><a href="#">personaggi <i class="fa fa-carret-down" aria-hidden="true"></i></a>
+            <ul class="header__sub-menu">
+                <li><a href="adalovelace.html">Ada Lovelace</a></li>
+                <li><a href="alanturing.html">alan turing</a></li>
+                <li><a href="stevejobs.html">steve jobs</a></li>
+                <li><a href="billgates.html">bill gates</a></li>
+                <li><a href="timberners.html">tim berners lee</a></li>
+                <li><a href="young.filo_page.brin.html">yang/filo page/brin</a></li>
+                <li><a href="anonymous.html">anonymous</a></li>
+                <li><a href="markzuckeberg.html">mark zuckeberg</a></li>
+                <li><a href="snowden.html">snowden</a></li>
+            </ul>
+          </li>
+          <li class="header__menu"><a href="processi_thread.html">thread</a></li>
+          <li class="header__menu"><a href="semafori.html">semafori</a></li>
+        </div>
+        </ul>
+        <div class="header__quick">
+          <div class="icon-hamburger">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+<div class="spacer"></div>
+
+
+
+
+
+<div class="grid pt-4">
+    <div class="col-50">
+        <p>
+            ci troviamo sempre a londra nei primi del 1900, durante la seconda rivoluzione industriale, possibile grazie alla scoperta
+            della corrente elettrica.
+            Alan Turing cresce con un carattere difficile, viene bullizzato da ragazzo ed è sempre stato solo nella sua vita.
+            Il suo unico amico Cristopher muore e questo contribuisce a renderlo una persona scontrosa con poche relazioni umane.
+            Ebbe pure problemi con la legge in quanto omosessuale.
+            Durante la seconda guerra mondiale i tedeschi per mandarsi i messaggi usavano "Enigma", una macchina in grado di criptare e codificare
+            i messaggi.
+       </p>
+    </div>
+    <div class="col-50">
+        <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1465993891989-6d2728076e9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c2Vjb25kYSUyMGd1ZXJyYSUyMG1vbmRpYWxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');">
+          <div class="cover__content">
+            <h1>Alan Turing</h1>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="grid pt-4">
+    <div class="col-50">
+        <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1465993891989-6d2728076e9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c2Vjb25kYSUyMGd1ZXJyYSUyMG1vbmRpYWxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');">
+          <div class="cover__content">
+            <h1>Alan Turing</h1>
+          </div>
+        </div>
+    </div>
+    <div class="col-50">
+        <div class="p-4">
+            <p>
+                L'FBI riuscì a rubarne una, e convoco tutti i matematici migliori del mondo per riuscire a decifrarla, tra cui Alan Turing.
+                ALan capì che il compito, se svolto a carta e penna, era impossibile.
+                pure se ci fossero stati centinaia di migliaglia di matematici apposta per tradurre in tempo reale i messaggi tedeschi, non sarebbero riusciti
+                a stare al passo con enigma.
+                Quindi inventò una macchina in grado di decifrare Enigma.
+                Grazie a lui gli alleati ottennero un grande vantaggio e la guerra durò solo 5 anni.
+                La sua storia venne pubblicata e diventò famosa solo nel 2000, a casua del segreto di stato.
+                Fù il  primo a pensare ad un intelligenza artificiale, ancora oggi si usa il test di Turing per verificare l'intelligenza di una 
+                macchina.
+                Per ora nessuna macchina lo ha ancora superato.
+           </p>
+        </div>
+    </div>
+</div>
+
+    
+    
+
+  <script>
+    let item = document.querySelector('.icon-hamburger');
+    item.addEventListener("click", function() {
+          document.body.classList.toggle('menu-open');
+    });
+
+
+  </script>
+
+
+</body>
+</html>

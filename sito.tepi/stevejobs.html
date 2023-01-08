@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+
+    <header class="header">
+      <div class="header__content">
+        <a class="header__logo" href="index.html">
+          <strong>CARO</strong>
+        </a>
+        <ul class="posizione_relativa">
+        <div>
+          <li class="header__menu" id="figlio"><a href="#">personaggi <i class="fa fa-carret-down" aria-hidden="true"></i></a>
+            <ul class="header__sub-menu">
+                <li><a href="adalovelace.html">Ada Lovelace</a></li>
+                <li><a href="alanturing.html">alan turing</a></li>
+                <li><a href="stevejobs.html">steve jobs</a></li>
+                <li><a href="billgates.html">bill gates</a></li>
+                <li><a href="timberners.html">tim berners lee</a></li>
+                <li><a href="young.filo_page.brin.html">yang/filo page/brin</a></li>
+                <li><a href="anonymous.html">anonymous</a></li>
+                <li><a href="markzuckeberg.html">mark zuckeberg</a></li>
+                <li><a href="snowden.html">snowden</a></li>
+            </ul>
+          </li>
+          <li class="header__menu"><a href="processi_thread.html">thread</a></li>
+          <li class="header__menu"><a href="semafori.html">semafori</a></li>
+        </div>
+        </ul>
+        <div class="header__quick">
+          <div class="icon-hamburger">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+<div class="spacer"></div>
+
+
+
+
+
+<div class="grid pt-4">
+    <div class="col-50">
+        <p>
+            Ci troviamo nella sylicon valley (USA), il fulcro mondiale dell'informatica proprio grazie al silicone usato nella costruzione dei pc.
+            Steve Jobs nasce nel 1955, viene adottato e va a vivere in California.
+            Fece parte degli hippie, un gionro ebbe un avventura con questa donna dalla quale nacque una figlia, Steve l'abbandonò;
+            In quegli anni i pc erano ancora grossi e non per tutti, Steve ebbe l'illuminazione: se fosse riuscito a portare i pc nelle case di tutti
+            avrebbe fatto una mare di soldi.
+            Insieme ad un suo amico, in un garage, costruisce il primo pc "piccolo": apple one.
+            Apple two sarà il personal pc più venduto di sempre.
+       </p>
+    </div>
+    <div class="col-50">
+        <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1569769107543-e0f61bab8e02?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RldmUlMjBqb2JzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');">
+          <div class="cover__content">
+            <h1>Steve Jobs</h1>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="grid pt-4">
+    <div class="col-50">
+        <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1569769107543-e0f61bab8e02?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RldmUlMjBqb2JzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');">
+          <div class="cover__content">
+            <h1>Steve Jobs</h1>
+          </div>
+        </div>
+    </div>
+    <div class="col-50">
+        <div class="p-4">
+            <p>
+              Steve Jobs rubò alla xerox l'interfaccia grafica, come novità presentava il mouse se l'assenza della linea di comando.
+              Ruba anche l'mp3 e inventa itunes.
+              Successivamente viene cacciato dalla Apple per i suoi modi di fare poco convenzionali, allora lui inventa un nuovo computer, gira un film
+              interamente al pc, fonda la Pixar e fa uscire Toy Story.
+              Nel frattempo la Apple senza di lui iniziò a fallire, solo col suo ritorno si riprese.
+              Il logo della mela tipico della Apple è dovuto al fatto che Steve Jobs mangiò solo mele per 2 anni.
+           </p>
+        </div>
+    </div>
+</div>
+
+    
+    
+
+  <script>
+    let item = document.querySelector('.icon-hamburger');
+    item.addEventListener("click", function() {
+          document.body.classList.toggle('menu-open');
+    });
+
+
+  </script>
+
+
+</body>
+</html>

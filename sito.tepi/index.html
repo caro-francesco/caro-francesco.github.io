@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+
+    <header class="header">
+      <div class="header__content">
+        <a class="header__logo" href="index.html">
+          <strong>CARO</strong>
+        </a>
+        <ul class="posizione_relativa">
+          <div>
+            <li class="header__menu" id="figlio"><a href="#">personaggi </a>
+              <ul class="header__sub-menu">
+                  <li><a href="adalovelace.html">Ada Lovelace</a></li>
+                  <li><a href="alanturing.html">alan turing</a></li>
+                  <li><a href="stevejobs.html">steve jobs</a></li>
+                  <li><a href="billgates.html">bill gates</a></li>
+                  <li><a href="timberners.html">tim berners lee</a></li>
+                  <li><a href="young.filo_page.brin.html">yang/filo page/brin</a></li>
+                  <li><a href="anonymous.html">anonymous</a></li>
+                  <li><a href="markzuckeberg.html">mark zuckeberg</a></li>
+                  <li><a href="snowden.html">snowden</a></li> 
+              </ul>
+            </li>
+            <li class="header__menu"><a href="processi_thread.html">thread</a></li>
+            <li class="header__menu"><a href="semafori.html">semafori</a></li>
+          </div>
+        </ul>
+        <div class="header__quick">
+          <div class="icon-hamburger">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=820&q=80);">
+      <div class="cover__content">
+        <h1> tepi </h1>
+        <h2>season1</h2>
+      </div>
+    </div>
+
+<div class="spacer"></div>
+
+<div class="grid">
+    <div class="col-50">
+        <h2>ecco i 3 argomenti principali:</h2>
+        <h3>personaggi</h3>
+        <h3>thread</h3>
+        <h3>semafori</h3>
+        <a href="musk.html" class="button  mb-2">argomento approfondito</a>
+    </div>
+    <div class="col-50">
+        <p>
+            in questo sito sono elencati dettagliatamente gli argomenti svolti durante la preseason e season1.
+            In particolare i personaggi storici e di più rilievo dell'informatica, il concetto di thread, 
+            i semafori (a cosa servono, quali esigienze hanno portato al loro sviluppo, come funzionano, casi particolari).
+            Si possono raggiungere i vari argomenti tramite il menù a tendina (visibile solo quandi ci si passa sopra col mouse) posto nella parte alta della pagina.
+            E' possibile visionare il lavoro anche tramite dispositivo mobile, in tal caso per accedere al menù si dovrà cliccare sulle 2 lineette in alto a destra.
+            Per tornare alla pagina iniziale schiacciare sul mio cognome in alto a sinistra
+       </p>
+    </div>
+</div>
+
+    
+    
+
+  <script>
+    let item = document.querySelector('.icon-hamburger');
+    item.addEventListener("click", function() {
+          document.body.classList.toggle('menu-open');
+    });
+
+
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+
+    <header class="header">
+      <div class="header__content">
+        <a class="header__logo" href="index.html">
+          <strong>CARO</strong>
+        </a>
+        <ul class="posizione_relativa">
+        <div>
+          <li class="header__menu" id="figlio"><a href="#">personaggi <i class="fa fa-carret-down" aria-hidden="true"></i></a>
+            <ul class="header__sub-menu">
+                <li><a href="adalovelace.html">Ada Lovelace</a></li>
+                <li><a href="alanturing.html">alan turing</a></li>
+                <li><a href="stevejobs.html">steve jobs</a></li>
+                <li><a href="billgates.html">bill gates</a></li>
+                <li><a href="timberners.html">tim berners lee</a></li>
+                <li><a href="young.filo_page.brin.html">yang/filo page/brin</a></li>
+                <li><a href="anonymous.html">anonymous</a></li>
+                <li><a href="markzuckeberg.html">mark zuckeberg</a></li>
+                <li><a href="snowden.html">snowden</a></li>
+            </ul>
+          </li>
+          <li class="header__menu"><a href="processi_thread.html">thread</a></li>
+          <li class="header__menu"><a href="semafori.html">semafori</a></li>
+        </div>
+        </ul>
+        <div class="header__quick">
+          <div class="icon-hamburger">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+<div class="spacer"></div>
+
+
+
+
+
+<div class="grid pt-4">
+    <div class="col-50">
+        <p>
+            Quando ho una zona di memoria condivisa devo proteggerla per evitare errore, per esempio se un processo non fa in tempo a scrivere
+            nel buffer, il processo che leggerà i dati dal buffer, prenderà dei dati sbagliati <br> <br>
+            Si dice corsa critica quella situazione dove due o più processi accedono a dati condivisi e il risultato dell’elaborazione dipende dall’ordine di esecuzione dei processi <br><br>
+            Si dice sezione critica o regione critica la parte di codice dove può avvenire la corsa critica, ovvero la parte di codice che accede alla memoria condivisa <br><br>
+            L’accesso alle sezioni critiche avviene in mutua esclusionese un processo alla volta può entrare nella propria sezione critica. Per esempio, se P0 è nella sua sezione critica, allora P1 non potrà entrare nella propria.
+       </p>
+    </div>
+    <div class="col-50">
+        <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('images/Screenshot\ \(57\).png');">
+          <div class="cover__content">
+          </div>
+        </div>
+    </div>
+</div>
+<div class="grid pt-4">
+    <div class="col-50">
+        <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('images/Screenshot\ \(56\).png');">
+          <div class="cover__content">
+          </div>
+        </div>
+    </div>
+    <div class="col-50">
+        <div class="p-4">
+            <p>
+                Per ovviare a questo problema si potrebbe usare una variabile booleana che tiene conto se il buffer è pieno o vuoto <br><br>
+                se è pieno il P0(scrive dati nel buffer) aspetterà che si svuota e il P1(prende dati dal buffer) preleverà i dati <br><br>
+                s è vuoto il P0 scriverà dati nel buffer, il P1 apsetterà che si riempia. <br><br>
+                il problema di questa soluzione è il busy_waiting: i while interni continuano a ciclare e si sprecano risorse.
+           </p>
+        </div>
+    </div>
+</div>
+<div class="grid pt-4">
+    <div class="col-50">
+        <p>
+            Allora si usano i semafori, composti da un count(numero di processi in coda) e una coda(coda dei processi) <br>
+            la wait, riceve un segnale (decrementa il count) e aggiunge un processo in coda: in poche parole quando riceve un segnale dice al count che c'è un processo in più
+            e lo aggiunge in coda <br><br>
+            la signal invece dice al count che c'è un processo in meno, in quanto quel processo è stato tolto dalla coda e mandato in esecuzione. <br><br>
+            la wait e la signal sono atomiche (non possono essere interrotte finchè non finiscono).
+       </p>
+    </div>
+    <div class="col-50">
+        <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('images/Screenshot\ \(58\).png');">
+          <div class="cover__content">
+          </div>
+        </div>
+    </div>
+</div>
+<div class="grid pt-4">
+  <div class="col-50">
+      <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('images/Screenshot\ \(59\).png');">
+        <div class="cover__content">
+        </div>
+      </div>
+  </div>
+  <div class="col-50">
+      <div class="p-4">
+          <p>
+            (Il Count viene inizializzato a 1, perché se lo inizializzassimo a 0 i due processientrerebbero subito in stato di Wait e nessuno li riattiverebbe).
+            attraverso le decrementazioni e le incrementazioni del count si permette la mutua esclusione, in quanto se il count del semafoto e >= a 0 vuol dire che non
+            ci sono processi nella zona critica, infatti finche il count rimane >= 0 non si entrerà mai nell'if della wait.
+         </p>
+      </div>
+  </div>
+</div>
+<div class="grid pt-4">
+  <div class="col-50">
+      <p>
+        A logica se si inizializza il count a 0, si ottiene la sincronizzazione tra i processi.
+        In particolare (nell'esempio dei treni delle slides) il processo P0 andrà in stato di wait fino allo sblocco da parte di P1(viene attraverso la signal).
+     </p>
+  </div>
+  <div class="col-50">
+      <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('images/Screenshot\ \(59\).png');">
+        <div class="cover__content">
+        </div>
+      </div>
+  </div>
+</div>
+<div class="grid pt-4">
+  <div class="col-50">
+      <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('images/Screenshot\ \(60\).png');">
+        <div class="cover__content">
+        </div>
+      </div>
+  </div>
+  <div class="col-50">
+      <div class="p-4">
+          <p>
+            Usando 2 semafori, depositato(count=0) e prelevato(count=1), riusciamo a eseguire la mutua esclusione tra i 2. <br>
+         </p>
+      </div>
+  </div>
+</div>
+</div>
+<div class="grid pt-4">
+  <div class="col-50">
+      <p>
+        supponiamo di avere un area dati condivisa: <br>
+        • La scrittura dei dati può essere effettuata daun solo processo scrittore alla volta. <br><br>
+        • La lettura dei dati può essere fatta da piùprocessi lettori a condizione che non ci sianoscrittori che stanno scrivendo. <br> <br> 
+        • Quando uno scrittore accede ai dati nessunaltro può accedervi, né lettore né scrittore.
+        usando la variabile lettori e i semafori scrivi, mutex si riescono a soddisfare i punti qui sopra.  <br>
+        ma ci analizzando il programma ci sono delle criticità: <br>
+        - quando arriva il primo lettore perché può accedere alla lettura solo se nessunoscrittore sta già scrivendo;
+        - quando l'ultimo lettore va via perché bisogna segnalare ad un eventualescrittore che ora è possibile scrivere;
+        - quando invece arriva un secondo(o terzo, o quarto, ...) lettore non è necessarioverificare se qualche scrittore sta scrivendo 
+          perché è già assicurato dal fatto cheesisteva già un lettore che stava leggendo e quindi sicuramente nessuno scrittorescriveva.
+     </p>
+  </div>
+  <div class="col-50">
+      <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('images/Screenshot\ \(61\).png');">
+        <div class="cover__content">
+        </div>
+      </div>
+  </div>
+</div>
+<div class="grid pt-4">
+  <div class="col-50">
+      <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('images/Screenshot\ \(62\).png');">
+        <div class="cover__content">
+        </div>
+      </div>
+  </div>
+  <div class="col-50">
+      <div class="p-4">
+          <p>
+            La comunicazione attraverso lo scambio di messaggi viene utilizzata nei sistemi distribuiti.
+            si usano la send e la recive. I messaggi in realtà sono composti, oltre che dall'informazione da trasmettere, anche da una parte 
+            di controllo.
+         </p>
+      </div>
+  </div>
+</div>
+</div>
+<div class="grid pt-4">
+  <div class="col-50">
+      <p>
+        Le Send e le Receive possono essere Bloccanti o Non Bloccanti: <br>
+        Diciamo che la Send è bloccante quando la comunicazione è resa affidabile da dei protocolli (es. ack/nack), quindi il processo
+        si blocchera fino al ricevimento di un riscontro. <br>
+        La Receive è bloccante quando ad esempio il processo P si ferma inattesa di ricevere il messaggio inviato da Q.
+        Se la Receive è non bloccante il processo che la esegue non si ferma inattesa del messaggio e ci si può trovare in due condizioni diverse: <br>
+        - Il messaggio era già stato inviato prima che il processo facesse laReceive, quindi appena il processo fa la receive ottiene il messaggio. <br>- Il messaggio non era stato mandato, ma questo processo ha fatto laReceive, non attende, prosegue e perde il messaggio.
+     </p>
+  </div>
+  <div class="col-50">
+      <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('images/Screenshot\ \(63\).png');">
+        <div class="cover__content">
+        </div>
+      </div>
+  </div>
+</div>
+<div class="grid pt-4">
+  <div class="col-50">
+      <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('images/Screenshot\ \(64\).png');">
+        <div class="cover__content">
+        </div>
+      </div>
+  </div>
+  <div class="col-50">
+      <div class="p-4">
+          <p>
+            utilizzando una mailbox, send non bloccante e receive bloccante riusciamo a eseguire il processo con mutua esclusione.
+         </p>
+      </div>
+  </div>
+</div>
+</div>
+<div class="grid pt-4">
+  <div class="col-50">
+      <p>
+        • Starvation: una situazione in cui l’esecuzione di uno opiù thread è posticipata indefinitamente <br>
+        • Deadlock: una situazione in cui tutti i thread di applicazioni cooperanti sono bloccati <br>
+        • Livelock: una situazione in cui tutti i thread di applicazioni  cooperanti  riescono  a  svolgere  qualcheattività senza mai progredire
+     </p>
+  </div>
+  <div class="col-50">
+      <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/GrafoDeadlock.png/220px-GrafoDeadlock.png');">
+        <div class="cover__content">
+        </div>
+      </div>
+  </div>
+</div>
+<div class="grid pt-4">
+  <div class="col-50">
+      <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/An_illustration_of_the_dining_philosophers_problem.png/800px-An_illustration_of_the_dining_philosophers_problem.png');">
+        <div class="cover__content">
+        </div>
+      </div>
+  </div>
+  <div class="col-50">
+      <div class="p-4">
+          <p>
+            per capire meglio il deadlock usiamo l'esempio dei filosofi al ristorante: <br>
+            • I filosofi alternano momenti di riflessione e di appetito <br>
+            • Per mangiare occorrono due bacchette <br> <br>
+            ● il deadlock si verifica quando ciascun filosofo prende inmano una forchetta, e di conseguenza nessun filosoforiuscirà a prenderne l’altra. <br>
+            ● la starvation può verificarsi indipendentemente daldeadlock se un filosofo non riesce mai a prendereentrambe le forchette e quindi a mangiare. <br> <br>
+            Una possibile soluzione è quella di numerare le forchette ed esigere che venganoprese in ordine numerico crescente, si crea così un'asimmetria che serve ad evitare i deadlock.
+         </p>
+      </div>
+  </div>
+</div>
+</div>
+<div class="grid pt-4">
+  <div class="col-50">
+      <p>
+        4 condizioni "necessarie" per il deadlock: <br> <br>
+        1. Accesso alle risorse in mutua esclusione <br>
+        2. Hold and Wait: processi in possesso di risorsepossono continuare a richiederne delle nuove,senza cedere quelle già acquisite anche serimangono bloccati in attesa <br>
+        3. NO Preemption (prevalenza) <br>
+        4. Attesa circolare: due o più processi sono inattesa di risorse usate da un altro processo delgruppo
+     </p>
+  </div>
+</div>
+<div class="grid pt-4">
+  <div class="col-50">
+          <p>
+            Le risorse si possono classificare in: <br> <br>
+            •Preemptable  (prerilasciabili):  che  possonoessere  sottratte  a  un  sistema  senzapregiudicarne  il  corretto  funzionamento(Esempio: processori, memoria). <br>
+            •Non preemptable (non prerilasciabili): che nonpossono essere tolte a un processo senzapregiudicarne  il  corretto  funzionamento(Esempio: nastri, dvd).
+         </p>
+      </div>
+  </div>
+</div>
+</div>
+
+  <script>
+    let item = document.querySelector('.icon-hamburger');
+    item.addEventListener("click", function() {
+          document.body.classList.toggle('menu-open');
+    });
+
+
+  </script>
+
+
+</body>
+</html>

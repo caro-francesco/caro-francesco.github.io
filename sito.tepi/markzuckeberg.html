@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+
+    <header class="header">
+      <div class="header__content">
+        <a class="header__logo" href="index.html">
+          <strong>CARO</strong>
+        </a>
+        <ul class="posizione_relativa">
+        <div>
+          <li class="header__menu" id="figlio"><a href="#">personaggi <i class="fa fa-carret-down" aria-hidden="true"></i></a>
+            <ul class="header__sub-menu">
+                <li><a href="adalovelace.html">Ada Lovelace</a></li>
+                <li><a href="alanturing.html">alan turing</a></li>
+                <li><a href="stevejobs.html">steve jobs</a></li>
+                <li><a href="billgates.html">bill gates</a></li>
+                <li><a href="timberners.html">tim berners lee</a></li>
+                <li><a href="young.filo_page.brin.html">yang/filo page/brin</a></li>
+                <li><a href="anonymous.html">anonymous</a></li>
+                <li><a href="markzuckeberg.html">mark zuckeberg</a></li>
+                <li><a href="snowden.html">snowden</a></li>
+            </ul>
+          </li>
+          <li class="header__menu"><a href="processi_thread.html">thread</a></li>
+          <li class="header__menu"><a href="semafori.html">semafori</a></li>
+        </div>
+        </ul>
+        <div class="header__quick">
+          <div class="icon-hamburger">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+<div class="spacer"></div>
+
+
+
+
+
+<div class="grid pt-4">
+    <div class="col-50">
+        <p>
+            Università di Harvard, primi del 2000, Mark Zuckeberg uno studente sfigato e antipatico, a causa della rottura con la ragazza
+            crea Face Smash, un sito in cui potevi scegliere la ragazza più bella. Fa successo nell'università.
+            2 sportivi vogliono assumerlo come programmatore per creare facebook, lui ruba l'idea, crea il sito ma gli serve un server:
+            viene finanziato da Eduardo Saverin.
+            I 2 sportivi gli fanno causa.
+            zuckeberg conosce Parker (napset), rimane affascinato e sotto suo consiglio va alla silicon valley.
+       </p>
+    </div>
+    <div class="col-50">
+        <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFyayUyMHp1Y2tlcmJlcmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');">
+          <div class="cover__content">
+            <h1>Mark Zuckeberg</h1>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="grid pt-4">
+    <div class="col-50">
+        <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFyayUyMHp1Y2tlcmJlcmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');">
+          <div class="cover__content">
+            <h1>Mark Zuckeberg</h1>
+          </div>
+        </div>
+    </div>
+    <div class="col-50">
+        <div class="p-4">
+            <p>
+                Durante le elezioni statiunitensi Trump ha chiesto alla Cambridge Analytica informazioni su persone votanti, Cambridge Analytica 
+                richiede questi dati a Facebook, i feed per gli utenti vennero modificati per far vincere le elezioni a Trump, è la prima volta in cui
+                la gente si rende conto che gli rubano i dati.
+           </p>
+        </div>
+    </div>
+</div>
+
+    
+    
+
+  <script>
+    let item = document.querySelector('.icon-hamburger');
+    item.addEventListener("click", function() {
+          document.body.classList.toggle('menu-open');
+    });
+
+
+  </script>
+
+
+</body>
+</html>

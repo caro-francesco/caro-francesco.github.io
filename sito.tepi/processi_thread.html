@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+
+    <header class="header">
+      <div class="header__content">
+        <a class="header__logo" href="index.html">
+          <strong>CARO</strong>
+        </a>
+        <ul class="posizione_relativa">
+        <div>
+          <li class="header__menu" id="figlio"><a href="#">personaggi <i class="fa fa-carret-down" aria-hidden="true"></i></a>
+            <ul class="header__sub-menu">
+                <li><a href="adalovelace.html">Ada Lovelace</a></li>
+                <li><a href="alanturing.html">alan turing</a></li>
+                <li><a href="stevejobs.html">steve jobs</a></li>
+                <li><a href="billgates.html">bill gates</a></li>
+                <li><a href="timberners.html">tim berners lee</a></li>
+                <li><a href="young.filo_page.brin.html">yang/filo page/brin</a></li>
+                <li><a href="anonymous.html">anonymous</a></li>
+                <li><a href="markzuckeberg.html">mark zuckeberg</a></li>
+                <li><a href="snowden.html">snowden</a></li>
+            </ul>
+          </li>
+          <li class="header__menu"><a href="processi_thread.html">thread</a></li>
+          <li class="header__menu"><a href="semafori.html">semafori</a></li>
+        </div>
+        </ul>
+        <div class="header__quick">
+          <div class="icon-hamburger">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+<div class="spacer"></div>
+
+
+
+
+
+<div class="grid pt-4">
+    <div class="col-50">
+        <p>
+            un processo è un programma mandato in esecuzione, il thread è un flusso di esecuzione all'interno di un processo.
+            il context-switch è il passaggio di esecuzione tra i thread, il S.O salva i registri del thread nella thread-table e carica quelli del thread successivo.
+            è più veloce del context-switch tra processi in quanto i thread condividono certe cose.
+       </p>
+    </div>
+    <div class="col-50">
+        <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Multithreaded_process.svg/220px-Multithreaded_process.svg.png');">
+          <div class="cover__content">
+          </div>
+        </div>
+    </div>
+</div>
+<div class="grid pt-4">
+    <div class="col-50">
+        <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('images/Screenshot\ \(65\).png');">
+          <div class="cover__content">
+          </div>
+        </div>
+    </div>
+    <div class="col-50">
+        <div class="p-4">
+            <p>
+                A sinistra un immagine raffigurativa dei vari stati dei thread.
+           </p>
+        </div>
+    </div>
+</div>
+<div class="grid pt-4">
+    <div class="col-50">
+        <p>
+            thread_create: chiede la creazione di un thread <br>
+            thread_exit: thread termina se stesso <br>
+            thread_join: un thread sincronizza la sua fine con la fine di un altro thread <br>
+            thread_yeld: rilascio cpu ad un altro thread in coda <br>
+            thread_sleep: blocca il thread per un certo tempo <br><br>
+            abbiamo thread foreground: quando termina il thread principale aspetta la fine degli altri thread <br>
+            abbiamo thread background: quanto termina il thread principale termina gli altri thread <br>
+       </p>
+    </div>
+    <div class="col-50">
+        <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://upload.wikimedia.org/wikipedia/commons/9/91/Single-thread.png');">
+          <div class="cover__content">
+          </div>
+        </div>
+    </div>
+</div>
+<div class="grid pt-4">
+  <div class="col-50">
+      <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Thread_pool.svg/400px-Thread_pool.svg.png');">
+        <div class="cover__content">
+        </div>
+      </div>
+  </div>
+  <div class="col-50">
+      <div class="p-4">
+          <p>
+              thread a livello utente: molti a uno <br>
+              deve essere supportato dal S.O. <br>
+              vantaggi: non esegue la trap <br>
+              svantaggi: se un thread va in attesa tutto il proceso va in attesa
+         </p>
+      </div>
+  </div>
+</div>
+<div class="grid pt-4">
+  <div class="col-50">
+      <p>
+        thread a livello kernel: uno a uno <br>
+        usa le strutture dati nel kernel, viene gestita direttamente dal S.O, le funzioni sono tutte trap <br>
+        vantaggi: se viene bloccato un thread gli altri non vengono bloccati <br>
+        svantaggi: context-switch piu lento
+     </p>
+  </div>
+  <div class="col-50">
+      <div class="cover" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Single_vs_multithreaded_processes.jpg/260px-Single_vs_multithreaded_processes.jpg');">
+        <div class="cover__content">
+        </div>
+      </div>
+  </div>
+</div>
+  <script>
+    let item = document.querySelector('.icon-hamburger');
+    item.addEventListener("click", function() {
+          document.body.classList.toggle('menu-open');
+    });
+
+
+  </script>
+
+
+</body>
+</html>
